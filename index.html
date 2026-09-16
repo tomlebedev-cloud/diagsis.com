@@ -4,370 +4,430 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>UAB „Diagnostinės sistemos“ – pažangios laboratorinės medicinos technologijos</title>
-  <meta name="description" content="Daugiau nei trisdešimt metų moderniausius laboratorinės medicinos sprendimus teikianti įmonė. Specializuojamės krešėjimo, imunologinių, genetinių ir kitų diagnostinių tyrimų srityse.">
-  <link rel="alternate" hreflang="en" href="en.html">
-  <link rel="icon" href="img/diagnostines-sistemos.jpg">
-  <style>
-    :root {
-      --green: #10834a;
-      --green-dark: #0b6639;
-      --green-soft: #e7f4ed;
-      --green-line: #c9e5d6;
-      --ink: #17232e;
-      --muted: #56646f;
-      --line: #e3ece5;
-      --bg: #ffffff;
-      --bg-soft: #f4faf5;
-      --radius: 14px;
-      --wrap: 1120px;
+  <meta name="description" content="Nuo 1994 m. tiekiame laboratorinės diagnostikos įrangą, reagentus ir techninę priežiūrą. Krešėjimo, imunologiniai, genetiniai ir kiti tyrimai. Stago, Abbott, Randox ir kitų gamintojų partneris Lietuvoje.">
+  <meta name="theme-color" content="#10834a">
+  <link rel="canonical" href="https://diagsis.com/">
+  <link rel="alternate" hreflang="lt" href="https://diagsis.com/">
+  <link rel="alternate" hreflang="en" href="https://diagsis.com/en.html">
+  <link rel="alternate" hreflang="x-default" href="https://diagsis.com/">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/favicon.png">
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="lt_LT">
+  <meta property="og:site_name" content="UAB „Diagnostinės sistemos“">
+  <meta property="og:title" content="Pažangios laboratorinės medicinos technologijos">
+  <meta property="og:description" content="Laboratorinės diagnostikos įranga, reagentai ir techninė priežiūra nuo 1994 m.">
+  <meta property="og:url" content="https://diagsis.com/">
+  <meta property="og:image" content="https://diagsis.com/img/diagnostines-sistemos.jpg">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "UAB „Diagnostinės sistemos“",
+    "legalName": "UAB „Diagnostinės sistemos“",
+    "url": "https://diagsis.com/",
+    "logo": "https://diagsis.com/img/diagnostines-sistemos.jpg",
+    "foundingDate": "1994",
+    "vatID": "LT222634219",
+    "taxID": "122263421",
+    "email": "diagnostines.sistemos@diagsis.com",
+    "telephone": "+370 5 274 0494",
+    "faxNumber": "+370 5 277 7620",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kalvarijų Sodų 1-oji g. 2",
+      "postalCode": "LT-08315",
+      "addressLocality": "Vilnius",
+      "addressCountry": "LT"
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0; background: var(--bg); color: var(--ink);
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      line-height: 1.6; font-size: 17px;
-    }
-    a { color: var(--green-dark); }
-    img { max-width: 100%; height: auto; display: block; }
-    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
-
-    /* Antraštė */
-    header {
-      position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96);
-      border-top: 4px solid var(--green); border-bottom: 1px solid var(--line); backdrop-filter: blur(6px);
-    }
-    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 104px; }
-    .nav img { height: 76px; width: auto; }
-    .nav ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
-    .nav ul a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 15px; white-space: nowrap; }
-    .nav ul a:hover { color: var(--green); }
-    .nav .lang a { border: 1.5px solid var(--green); border-radius: 999px; padding: 4px 11px; color: var(--green-dark); font-weight: 600; font-size: 13px; letter-spacing: .04em; }
-    .nav .lang a:hover { background: var(--green-soft); }
-    @media (max-width: 1080px) { .nav img { height: 60px; } .nav ul { gap: 18px; } .nav ul a { font-size: 14px; } }
-    @media (max-width: 760px) {
-      .nav { height: 80px; }
-      .nav img { height: 54px; }
-      .nav ul li:not(.lang) { display: none; }
-    }
-
-    /* Pagrindinis blokas */
-    .hero {
-      background: radial-gradient(900px 420px at 85% 10%, var(--green-soft), transparent 70%), #fff;
-      color: var(--ink); padding: 96px 0 104px; border-bottom: 1px solid var(--line);
-    }
-    .hero .eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: 13px; color: var(--green); font-weight: 600; margin: 0 0 14px; }
-    .hero h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.12; margin: 0 0 20px; max-width: 16ch; font-weight: 700; color: var(--ink); }
-    .hero p.lead { font-size: clamp(17px, 2vw, 20px); max-width: 58ch; margin: 0 0 34px; color: var(--muted); }
-    .btns { display: flex; flex-wrap: wrap; gap: 12px; }
-    .btn {
-      display: inline-block; padding: 13px 22px; border-radius: 999px; font-weight: 600;
-      text-decoration: none; font-size: 15px; transition: background .2s, color .2s;
-    }
-    .btn-primary { background: var(--green); color: #fff; }
-    .btn-primary:hover { background: var(--green-dark); }
-    .btn-outline { border: 1.5px solid var(--green); color: var(--green-dark); }
-    .btn-outline:hover { background: var(--green-soft); }
-    .btn-light { background: #fff; color: var(--green-dark); }
-    .btn-light:hover { background: var(--green-soft); }
-
-    /* Skaičiai */
-    .facts { margin-top: -48px; }
-    .facts .grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); background: #fff;
-      border-radius: var(--radius); border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(16,131,74,.08); overflow: hidden;
-    }
-    .fact { padding: 28px 24px; text-align: center; border-right: 1px solid var(--line); }
-    .fact:last-child { border-right: 0; }
-    .fact b { display: block; font-size: 36px; color: var(--green); line-height: 1.1; }
-    .fact span { color: var(--muted); font-size: 15px; }
-    @media (max-width: 640px) {
-      .facts .grid { grid-template-columns: 1fr; }
-      .fact { border-right: 0; border-bottom: 1px solid var(--line); }
-      .fact:last-child { border-bottom: 0; }
-    }
-
-    /* Skyriai */
-    section { padding: 88px 0; }
-    section.soft { background: var(--bg-soft); }
-    h2 { font-size: clamp(26px, 3.4vw, 36px); margin: 0 0 14px; line-height: 1.2; }
-    .intro { color: var(--muted); max-width: 64ch; margin: 0 0 44px; }
-    .kicker { color: var(--green); font-weight: 600; text-transform: uppercase; letter-spacing: .1em; font-size: 13px; margin: 0 0 8px; }
-
-    .about { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: start; }
-    .about p { margin: 0 0 16px; }
-    .about ul { margin: 0; padding: 0; list-style: none; }
-    .about li { padding: 14px 0 14px 34px; border-bottom: 1px solid var(--line); position: relative; }
-    .about li::before {
-      content: ""; position: absolute; left: 4px; top: 21px; width: 12px; height: 12px;
-      border-radius: 50%; background: var(--green);
-    }
-    @media (max-width: 820px) { .about { grid-template-columns: 1fr; gap: 28px; } }
-
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-    .card {
-      transition: border-color .2s, box-shadow .2s;
-      background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 24px;
-    }
-    .card .icon {
-      width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center;
-      background: var(--green-soft); color: var(--green); margin-bottom: 18px;
-    }
-    .card h3 { margin: 0 0 8px; font-size: 19px; }
-    .card:hover { border-color: var(--green-line); box-shadow: 0 8px 24px rgba(16,131,74,.08); }
-    .card p { margin: 0; color: var(--muted); font-size: 15.5px; }
-
-    /* Gamintojai */
-    .brands { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
-    .brand {
-      background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--green);
-      border-radius: 10px; padding: 22px; transition: box-shadow .2s;
-    }
-    .brand:hover { box-shadow: 0 8px 24px rgba(16,131,74,.08); }
-    .brand .logo {
-      height: 84px; display: flex; align-items: center; justify-content: center;
-      margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--line);
-    }
-    .brand .logo img { max-height: 64px; max-width: 200px; width: auto; object-fit: contain; }
-    .brand .logo img.tall { max-height: 84px; }
-    .wordmark { font-size: 24px; font-weight: 700; letter-spacing: -.01em; color: var(--ink); text-align: center; line-height: 1.15; }
-    .brand b { display: block; font-size: 18px; margin-bottom: 2px; }
-    .brand span { color: var(--muted); font-size: 15px; }
-    .logowall {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px;
-      margin: 0 0 16px; padding: 0; list-style: none;
-    }
-    .logowall li {
-      background: #fff; border: 1px solid var(--line); border-radius: 10px; height: 96px;
-      display: flex; align-items: center; justify-content: center; padding: 16px;
-    }
-    .logowall img { max-height: 48px; max-width: 100%; width: auto; object-fit: contain; }
-    .more { margin-top: 44px; }
-    .more h3 { font-size: 16px; margin: 0 0 14px; color: var(--muted); font-weight: 600; }
-    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
-    .chips li {
-      background: var(--green-soft); color: var(--green-dark); border-radius: 999px;
-      padding: 7px 14px; font-size: 14.5px; font-weight: 500;
-    }
-    @media (max-width: 360px) { .brands { grid-template-columns: 1fr; } }
-
-    /* Gedimų sistema */
-    .cta {
-      display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap;
-      background: var(--green); color: #fff; border-radius: var(--radius); padding: 40px;
-    }
-    .cta h2 { color: #fff; margin-bottom: 8px; }
-    .cta p { margin: 0; opacity: .88; max-width: 56ch; }
-
-    /* Kontaktai */
-    .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .contact .card h3 { margin-bottom: 14px; }
-    .contact dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; font-size: 15.5px; }
-    .contact dt { color: var(--muted); }
-    .contact dd { margin: 0; overflow-wrap: anywhere; }
-    .map { grid-column: 1 / -1; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
-    .map iframe { width: 100%; height: 340px; border: 0; display: block; }
-    @media (max-width: 760px) { .contact { grid-template-columns: 1fr; } .cta { padding: 28px; } }
-
-    footer { background: #fff; color: var(--muted); border-top: 4px solid var(--green); padding: 32px 0; font-size: 14px; }
-    footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-  </style>
+  }
+  </script>
 </head>
 <body>
+  <a class="skip" href="#turinys">Pereiti prie turinio</a>
 
-  <header>
+  <header class="site-header">
     <div class="wrap nav">
-      <a href="#"><img src="img/diagnostines-sistemos.jpg" alt="UAB „Diagnostinės sistemos“" width="400" height="107"></a>
-      <ul>
+      <a class="brand-link" href="#" aria-label="UAB „Diagnostinės sistemos“ – pradžia">
+        <img src="img/diagnostines-sistemos.jpg" alt="UAB „Diagnostinės sistemos“" width="400" height="107">
+      </a>
+      <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false">
+        <span></span><b class="visually-hidden">Meniu</b>
+      </button>
+      <ul class="menu" id="menu">
         <li><a href="#apie">Apie mus</a></li>
         <li><a href="#sritys">Veiklos sritys</a></li>
         <li><a href="#gamintojai">Gamintojai</a></li>
-        <li><a href="#gedimai">Gedimų registravimas</a></li>
+        <li><a href="#gedimai">Servisas</a></li>
         <li><a href="#kontaktai">Kontaktai</a></li>
-        <li class="lang"><a href="en.html" hreflang="en" lang="en">EN</a></li>
+        <li class="lang"><a href="en.html" hreflang="en" lang="en" aria-label="English version">EN</a></li>
+        <li class="cta-link"><a href="#kontaktai">Susisiekti</a></li>
       </ul>
     </div>
   </header>
 
-  <main>
-    <div class="hero">
-      <div class="wrap">
-        <p class="eyebrow">UAB „Diagnostinės sistemos“ · nuo 1994 m.</p>
-        <h1>Pažangios laboratorinės medicinos technologijos</h1>
-        <p class="lead">Daugiau nei trisdešimt metų teikiame moderniausius laboratorinės medicinos sprendimus – krešėjimo, imunologinių, genetinių ir kitų diagnostinių tyrimų srityse.</p>
-        <div class="btns">
-          <a class="btn btn-primary" href="#kontaktai">Susisiekti</a>
-          <a class="btn btn-outline" href="#sritys">Veiklos sritys</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="wrap facts">
-      <div class="grid">
-        <div class="fact"><b>1994</b><span>įmonės įkūrimo metai</span></div>
-        <div class="fact"><b>30+</b><span>metų patirtis laboratorinėje medicinoje</span></div>
-        <div class="fact"><b>Vilnius</b><span>būstinė ir techninė komanda</span></div>
-      </div>
-    </div>
-
-    <section id="apie">
-      <div class="wrap about">
+  <main id="turinys">
+    <section class="hero">
+      <div class="wrap hero-grid">
         <div>
-          <p class="kicker">Apie mus</p>
-          <h2>Patikimas partneris laboratorijoms</h2>
-          <p>UAB „Diagnostinės sistemos“ – Lietuvos įmonė, nuo 1994 metų aprūpinanti sveikatos priežiūros įstaigas ir laboratorijas šiuolaikine diagnostine įranga, reagentais ir sprendimais.</p>
-          <p>Mūsų tikslas – kad laboratorijos dirbtų tiksliai, greitai ir be sutrikimų: nuo tinkamo sprendimo parinkimo iki įrangos įdiegimo ir tolesnės techninės priežiūros.</p>
+          <p class="eyebrow"><b>1994</b> Laboratorinės medicinos sprendimai Lietuvoje</p>
+          <h1>Pažangios <em>laboratorinės medicinos</em> technologijos</h1>
+          <p class="lead">Daugiau nei trisdešimt metų tiekiame modernią diagnostikos įrangą, reagentus ir techninę priežiūrą krešėjimo, imunologinių, genetinių ir kitų tyrimų laboratorijoms.</p>
+          <div class="btns">
+            <a class="btn btn-primary" href="#kontaktai">Susisiekti
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-outline" href="#gamintojai">Mūsų gamintojai</a>
+          </div>
+          <ul class="hero-points">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Įranga ir reagentai</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Diegimas ir servisas</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Pasaulinių gamintojų partneris</li>
+          </ul>
         </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="panel">
+            <svg viewBox="0 0 520 400" role="presentation">
+              <defs>
+                <linearGradient id="hv-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3f9f5"/><stop offset="1" stop-color="#e7f4ed"/></linearGradient>
+                <linearGradient id="hv-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#10834a" stop-opacity=".22"/><stop offset="1" stop-color="#10834a" stop-opacity="0"/></linearGradient>
+                <clipPath id="hv-clip"><rect width="520" height="400" rx="14"/></clipPath>
+              </defs>
+              <g clip-path="url(#hv-clip)">
+                <rect width="520" height="400" fill="url(#hv-bg)"/>
+                <rect width="520" height="44" fill="#fff"/>
+                <circle cx="24" cy="22" r="5" fill="#d8e6de"/><circle cx="42" cy="22" r="5" fill="#d8e6de"/><circle cx="60" cy="22" r="5" fill="#d8e6de"/>
+                <rect x="190" y="15" width="140" height="14" rx="7" fill="#eef5f1"/>
+                <rect x="22" y="64" width="300" height="200" rx="12" fill="#fff" stroke="#e2ebe6"/>
+                <rect x="40" y="82" width="90" height="9" rx="4.5" fill="#0f1d17" opacity=".85"/>
+                <rect x="40" y="98" width="60" height="7" rx="3.5" fill="#5d6b64" opacity=".35"/>
+                <g stroke="#e2ebe6" stroke-width="1"><path d="M40 140h264M40 175h264M40 210h264M40 245h264"/></g>
+                <path d="M40 240 C 110 238, 130 236, 160 205 S 210 130, 240 125 S 290 122, 304 122 L304 246 L40 246 Z" fill="url(#hv-area)"/>
+                <path d="M40 240 C 110 238, 130 236, 160 205 S 210 130, 240 125 S 290 122, 304 122" fill="none" stroke="#10834a" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="187" cy="170" r="6" fill="#fff" stroke="#10834a" stroke-width="3"/>
+                <rect x="198" y="146" width="70" height="22" rx="6" fill="#073d23"/>
+                <rect x="208" y="154" width="50" height="6" rx="3" fill="#8fd6ad"/>
+                <rect x="340" y="64" width="158" height="200" rx="12" fill="#fff" stroke="#e2ebe6"/>
+                <rect x="360" y="90" width="22" height="130" rx="11" fill="#f3f9f5" stroke="#c9e5d6" stroke-width="2"/>
+                <rect x="362" y="150" width="18" height="68" rx="9" fill="#10834a"/>
+                <rect x="358" y="84" width="26" height="12" rx="4" fill="#0b6639"/>
+                <rect x="398" y="90" width="22" height="130" rx="11" fill="#f3f9f5" stroke="#c9e5d6" stroke-width="2"/>
+                <rect x="400" y="120" width="18" height="98" rx="9" fill="#3fae6f"/>
+                <rect x="396" y="84" width="26" height="12" rx="4" fill="#5d6b64"/>
+                <rect x="436" y="90" width="22" height="130" rx="11" fill="#f3f9f5" stroke="#c9e5d6" stroke-width="2"/>
+                <rect x="438" y="172" width="18" height="46" rx="9" fill="#8fd6ad"/>
+                <rect x="434" y="84" width="26" height="12" rx="4" fill="#0b6639"/>
+                <rect x="352" y="226" width="134" height="18" rx="5" fill="#e7f4ed"/>
+                <rect x="22" y="282" width="150" height="96" rx="12" fill="#fff" stroke="#e2ebe6"/>
+                <circle cx="52" cy="312" r="14" fill="#e7f4ed"/><path d="M46 312l4 4 8-8" stroke="#10834a" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="40" y="340" width="100" height="9" rx="4.5" fill="#0f1d17" opacity=".8"/>
+                <rect x="40" y="356" width="70" height="7" rx="3.5" fill="#5d6b64" opacity=".35"/>
+                <rect x="185" y="282" width="150" height="96" rx="12" fill="#fff" stroke="#e2ebe6"/>
+                <g transform="translate(203 298)" stroke="#10834a" stroke-width="2.5" fill="none" stroke-linecap="round">
+                  <path d="M0 0c0 12 24 12 24 24M24 0C24 12 0 12 0 24"/><path d="M4 6h16M4 18h16" stroke="#8fd6ad"/>
+                </g>
+                <rect x="203" y="340" width="96" height="9" rx="4.5" fill="#0f1d17" opacity=".8"/>
+                <rect x="203" y="356" width="60" height="7" rx="3.5" fill="#5d6b64" opacity=".35"/>
+                <rect x="348" y="282" width="150" height="96" rx="12" fill="#073d23"/>
+                <rect x="366" y="304" width="44" height="22" rx="4" fill="#8fd6ad" opacity=".9"/>
+                <rect x="366" y="340" width="96" height="9" rx="4.5" fill="#fff" opacity=".9"/>
+                <rect x="366" y="356" width="64" height="7" rx="3.5" fill="#fff" opacity=".4"/>
+              </g>
+            </svg>
+          </div>
+          <div class="float f1">
+            <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z"/></svg></i>
+            <div><b>Hemostazė</b><span>Diagnostica Stago</span></div>
+          </div>
+          <div class="float f2">
+            <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-2.5 2.5-2.5z"/></svg></i>
+            <div><b>Techninė priežiūra</b><span>Servisas Vilniuje</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust">
+      <div class="wrap">
+        <p>Mūsų partneriai</p>
         <ul>
-          <li>Medicinos ir laboratorinės diagnostikos įrangos tiekimas</li>
-          <li>Reagentai ir eksploatacinės medžiagos</li>
-          <li>Įrangos diegimas ir techninė priežiūra</li>
-          <li>Elektroninė gedimų registravimo ir kontrolės sistema klientams</li>
+          <li><img class="lg" src="img/gamintojai/stago.png" alt="Stago" width="195" height="126"></li>
+          <li><img src="img/gamintojai/abbott.svg" alt="Abbott" width="120" height="30"></li>
+          <li><img src="img/gamintojai/randox.png" alt="Randox" width="171" height="30" style="height:22px"></li>
+          <li><img src="img/gamintojai/diasource.svg" alt="DIAsource ImmunoAssays" width="170" height="30" style="height:22px"></li>
+          <li><img src="img/gamintojai/thermofisher.svg" alt="Thermo Fisher Scientific" width="133" height="30"></li>
         </ul>
       </div>
+    </div>
+
+    <section class="section" id="apie">
+      <div class="wrap about">
+        <div class="about-text reveal">
+          <div class="section-head">
+            <p class="kicker">Apie mus</p>
+            <h2>Patikimas partneris Lietuvos laboratorijoms</h2>
+          </div>
+          <p>UAB „Diagnostinės sistemos“ – Lietuvos įmonė, nuo 1994 metų aprūpinanti ligonines, klinikas ir laboratorijas šiuolaikine diagnostine įranga, reagentais bei sprendimais.</p>
+          <p>Mūsų tikslas – kad laboratorijos dirbtų tiksliai, greitai ir be sutrikimų: nuo tinkamo sprendimo parinkimo iki įrangos įdiegimo ir ilgalaikės techninės priežiūros.</p>
+        </div>
+        <div class="stats reveal">
+          <div class="stat"><b>1994</b><span>įmonės veiklos pradžia</span></div>
+          <div class="stat"><b>30+</b><span>metų patirtis laboratorinėje medicinoje</span></div>
+          <div class="stat"><b>70+</b><span>darbuotojų komanda Vilniuje</span></div>
+          <div class="stat dark"><b>19</b><span>tarptautinių gamintojų partnerių</span></div>
+        </div>
+      </div>
     </section>
 
-    <section id="sritys" class="soft">
+    <section class="section tint" id="sritys">
       <div class="wrap">
-        <p class="kicker">Veiklos sritys</p>
-        <h2>Specializacija</h2>
-        <p class="intro">Dirbame pagrindinėse laboratorinės diagnostikos srityse, kuriose tikslumas ir patikimumas yra svarbiausi.</p>
+        <div class="section-head center reveal">
+          <p class="kicker">Veiklos sritys</p>
+          <h2>Specializacija</h2>
+          <p>Dirbame pagrindinėse laboratorinės diagnostikos srityse, kuriose tikslumas ir patikimumas yra svarbiausi.</p>
+        </div>
         <div class="cards">
-          <div class="card">
-            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z"/></svg></div>
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.7s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z"/></svg></div>
             <h3>Krešėjimo tyrimai</h3>
-            <p>Hemostazės ir kraujo krešėjimo diagnostikos sprendimai klinikinėms laboratorijoms.</p>
-          </div>
-          <div class="card">
-            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <p>Hemostazės, trombocitų funkcijos ir tromboelastometrijos sprendimai klinikinėms laboratorijoms.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 4v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
             <h3>Imunologiniai tyrimai</h3>
-            <p>Imunologinės diagnostikos įranga ir reagentai įvairiems klinikiniams poreikiams.</p>
-          </div>
-          <div class="card">
-            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c0 6 10 6 10 12s-10 6-10 6"/><path d="M17 3c0 6-10 6-10 12s10 6 10 6"/><path d="M8 7h8M8 17h8"/></svg></div>
+            <p>Imunochemijos, specialiųjų baltymų ir greitųjų testų įranga bei reagentai.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c0 6 10 6 10 12s-10 6-10 6"/><path d="M17 3c0 6-10 6-10 12s10 6 10 6"/><path d="M8 7h8M8 17h8"/></svg></div>
             <h3>Genetiniai tyrimai</h3>
-            <p>Molekulinės ir genetinės diagnostikos technologijos šiuolaikinėms laboratorijoms.</p>
-          </div>
-          <div class="card">
-            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-2.5 2.5-2.5z"/></svg></div>
-            <h3>Įranga ir servisas</h3>
-            <p>Diagnostinės įrangos diegimas, techninė priežiūra ir greitas gedimų šalinimas.</p>
-          </div>
+            <p>Molekulinės diagnostikos ir FISH technologijos šiuolaikinėms laboratorijoms.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6.5L4.5 19A1.5 1.5 0 0 0 5.8 21h12.4a1.5 1.5 0 0 0 1.3-2L14 9.5V3"/><path d="M7.5 15h9"/></svg></div>
+            <h3>Klinikinė chemija</h3>
+            <p>Biocheminiai analizatoriai, reagentai, kalibratoriai ir kokybės kontrolės medžiagos.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="gamintojai">
+    <section class="section" id="procesas">
       <div class="wrap">
-        <p class="kicker">Gamintojai</p>
-        <h2>Pasaulyje pripažinti partneriai</h2>
-        <p class="intro">Bendradarbiaujame su tarptautiniais laboratorinės diagnostikos gamintojais ir jų įrangą, reagentus bei eksploatacines medžiagas tiekiame Lietuvos sveikatos priežiūros įstaigoms.</p>
-        <div class="brands">
-          <div class="brand">
-            <div class="logo"><img class="tall" src="img/gamintojai/stago.png" alt="Stago" loading="lazy"></div>
-            <b>Diagnostica Stago</b><span>Hemostazė ir kraujo krešėjimo tyrimai</span>
-          </div>
-          <div class="brand">
-            <div class="logo"><img src="img/gamintojai/abbott.svg" alt="Abbott" loading="lazy"></div>
-            <b>Abbott</b><span>Klinikinė chemija, imunochemija, molekulinė diagnostika</span>
-          </div>
-          <div class="brand">
-            <div class="logo"><img src="img/gamintojai/randox.png" alt="Randox" loading="lazy" style="max-height:34px"></div>
-            <b>Randox Laboratories</b><span>Klinikinė chemija ir kokybės kontrolė</span>
-          </div>
-          <div class="brand">
-            <div class="logo"><img src="img/gamintojai/elitech.svg" alt="ELITechGroup" loading="lazy"></div>
-            <b>ELITechGroup</b><span>Klinikinės chemijos analizatoriai ir reagentai</span>
-          </div>
-          <div class="brand">
-            <div class="logo"><div class="wordmark">The Binding Site</div></div>
-            <b>The Binding Site</b><span>Specialiųjų baltymų tyrimai</span>
-          </div>
-          <div class="brand">
-            <div class="logo"><div class="wordmark">TEM<br><small style="font-size:14px;font-weight:600;color:var(--muted)">International · ROTEM</small></div></div>
-            <b>Tem International</b><span>Tromboelastometrija (ROTEM)</span>
-          </div>
+        <div class="section-head reveal">
+          <p class="kicker">Kaip dirbame</p>
+          <h2>Nuo poreikio iki veikiančios laboratorijos</h2>
         </div>
-        <div class="more">
-          <h3>Taip pat dirbame su</h3>
-          <ul class="logowall">
-            <li><img src="img/gamintojai/thermofisher.svg" alt="Thermo Fisher Scientific" loading="lazy"></li>
-            <li><img src="img/gamintojai/chronolog.png" alt="Chrono-log" loading="lazy"></li>
-            <li><img src="img/gamintojai/diasource.svg" alt="DIAsource ImmunoAssays" loading="lazy" style="max-height:30px"></li>
-            <li><img src="img/gamintojai/sfri.png" alt="SFRI" loading="lazy"></li>
-            <li><img src="img/gamintojai/behnk.png" alt="Behnk Elektronik" loading="lazy"></li>
-            <li><img src="img/gamintojai/lifegenomics.svg" alt="Life Genomics" loading="lazy"></li>
-            <li><img src="img/gamintojai/kova.svg" alt="KOVA International" loading="lazy" style="max-height:36px"></li>
+        <ol class="steps">
+          <li class="reveal"><h3>Poreikių įvertinimas</h3><p>Išsiaiškiname tyrimų apimtis, laboratorijos darbo eigą ir reikalavimus.</p></li>
+          <li class="reveal"><h3>Sprendimo parinkimas</h3><p>Pasiūlome tinkamą įrangą ir reagentus iš patikimų gamintojų.</p></li>
+          <li class="reveal"><h3>Tiekimas ir diegimas</h3><p>Pristatome, įdiegiame ir paruošiame įrangą darbui.</p></li>
+          <li class="reveal"><h3>Priežiūra ir servisas</h3><p>Užtikriname techninę priežiūrą ir greitą gedimų šalinimą.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section tint" id="gamintojai">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <p class="kicker">Gamintojai</p>
+          <h2>Pasaulyje pripažinti partneriai</h2>
+          <p>Bendradarbiaujame su tarptautiniais laboratorinės diagnostikos gamintojais ir jų produkciją tiekiame Lietuvos sveikatos priežiūros įstaigoms.</p>
+        </div>
+
+        <div class="partners-featured">
+          <article class="partner reveal">
+            <div class="partner-logo"><img class="tall" src="img/gamintojai/stago.png" alt="Stago" loading="lazy"></div>
+            <div class="partner-body">
+              <span class="country">Prancūzija</span>
+              <h3>Diagnostica Stago</h3>
+              <p>Hemostazės ir kraujo krešėjimo diagnostikos sistemos bei reagentai.</p>
+              <ul class="tags"><li>Hemostazė</li><li>Krešėjimas</li></ul>
+            </div>
+          </article>
+          <article class="partner reveal">
+            <div class="partner-logo"><img src="img/gamintojai/abbott.svg" alt="Abbott" loading="lazy"></div>
+            <div class="partner-body">
+              <span class="country">JAV</span>
+              <h3>Abbott</h3>
+              <p>Klinikinės chemijos, imunochemijos ir molekulinės diagnostikos sistemos.</p>
+              <ul class="tags"><li>Imunochemija</li><li>Molekulinė diagnostika</li></ul>
+            </div>
+          </article>
+          <article class="partner reveal">
+            <div class="partner-logo"><img class="wide" src="img/gamintojai/randox.png" alt="Randox" loading="lazy"></div>
+            <div class="partner-body">
+              <span class="country">Jungtinė Karalystė</span>
+              <h3>Randox Laboratories</h3>
+              <p>Biocheminiai analizatoriai, reagentai ir kokybės kontrolė.</p>
+              <ul class="tags"><li>Klinikinė chemija</li><li>Kokybės kontrolė</li></ul>
+            </div>
+          </article>
+          <article class="partner reveal">
+            <div class="partner-logo"><div class="wordmark wm-elitech">ELITech<small>Group</small></div></div>
+            <div class="partner-body">
+              <span class="country">Prancūzija</span>
+              <h3>ELITechGroup</h3>
+              <p>Klinikinės chemijos analizatoriai ir reagentai.</p>
+              <ul class="tags"><li>Klinikinė chemija</li></ul>
+            </div>
+          </article>
+          <article class="partner reveal">
+            <div class="partner-logo"><div class="wordmark wm-serif">The Binding Site<small>Special protein experts</small></div></div>
+            <div class="partner-body">
+              <span class="country">Jungtinė Karalystė</span>
+              <h3>The Binding Site</h3>
+              <p>Specialiųjų baltymų tyrimų sprendimai.</p>
+              <ul class="tags"><li>Specialieji baltymai</li></ul>
+            </div>
+          </article>
+          <article class="partner reveal">
+            <div class="partner-logo"><div class="wordmark wm-caps">ROTEM<small>Tem International</small></div></div>
+            <div class="partner-body">
+              <span class="country">Vokietija</span>
+              <h3>Tem International</h3>
+              <p>Tromboelastometrijos sistemos ir reagentai.</p>
+              <ul class="tags"><li>Tromboelastometrija</li></ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="partners-more reveal">
+          <div class="partners-more-head"><h3>Taip pat dirbame su</h3></div>
+          <ul class="logo-grid">
+            <li><img src="img/gamintojai/thermofisher.svg" alt="Thermo Fisher Scientific" loading="lazy"><span class="name">Thermo Fisher Scientific</span></li>
+            <li><img src="img/gamintojai/chronolog.png" alt="Chrono-log" loading="lazy"><span class="name">Chrono-log</span></li>
+            <li><img src="img/gamintojai/diasource.svg" alt="DIAsource ImmunoAssays" loading="lazy" style="max-height:28px"><span class="name">DIAsource ImmunoAssays</span></li>
+            <li><img src="img/gamintojai/sfri.png" alt="SFRI" loading="lazy"><span class="name">SFRI</span></li>
+            <li><img src="img/gamintojai/behnk.png" alt="Behnk Elektronik" loading="lazy"><span class="name">Behnk Elektronik</span></li>
+            <li><img src="img/gamintojai/lifegenomics.svg" alt="Life Genomics" loading="lazy"><span class="name">Life Genomics</span></li>
+            <li><img src="img/gamintojai/kova.svg" alt="KOVA International" loading="lazy" style="max-height:34px"><span class="name">KOVA International</span></li>
+            <li><div class="wordmark">Getein<small>Biotech</small></div></li>
+            <li><div class="wordmark">Accriva<small>Diagnostics</small></div></li>
+            <li><div class="wordmark">Abtek<small>Biologicals</small></div></li>
+            <li><div class="wordmark wm-serif">CARE<small>diagnostica</small></div></li>
+            <li><div class="wordmark wm-caps">Seratec<small>Biotechnologie</small></div></li>
+            <li><div class="wordmark wm-caps">BSI<small>Biochemical Systems</small></div></li>
+            <li><div class="wordmark" style="color:var(--green)">+<small>ir kiti gamintojai</small></div></li>
           </ul>
-          <ul class="chips">
-            <li>Getein Biotech</li>
-            <li>Accriva Diagnostics</li>
-            <li>Abtek Biologicals</li>
-            <li>CARE diagnostica</li>
-            <li>SERATEC</li>
-            <li>Biochemical Systems International</li>
-          </ul>
+          <p class="partners-note">Ieškote konkretaus gamintojo produkcijos? <a href="#kontaktai">Susisiekite su mumis</a>.</p>
         </div>
       </div>
     </section>
 
-    <section id="gedimai" class="soft">
+    <section class="section" id="gedimai">
       <div class="wrap">
-        <div class="cta">
+        <div class="service reveal">
           <div>
-            <h2>Gedimų registravimas</h2>
+            <p class="kicker">Servisas</p>
+            <h2>Įrangos gedimų registravimas</h2>
             <p>Klientai gali užregistruoti įrangos gedimą ir sekti jo šalinimo eigą elektroninėje gedimų registravimo ir kontrolės sistemoje.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Registracija internetu</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Šalinimo eigos stebėjimas</li>
+            </ul>
           </div>
-          <a class="btn btn-light" href="http://diagsis.com/egkrks/" target="_blank" rel="noopener">Atidaryti sistemą →</a>
+          <a class="btn btn-light" href="http://diagsis.com/egkrks/" target="_blank" rel="noopener">Registruoti gedimą
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
         </div>
       </div>
     </section>
 
-    <section id="kontaktai">
+    <section class="section tint" id="kontaktai">
       <div class="wrap">
-        <p class="kicker">Kontaktai</p>
-        <h2>Susisiekite su mumis</h2>
-        <p class="intro">Mielai atsakysime į klausimus apie įrangą, reagentus ir techninę priežiūrą.</p>
-        <div class="contact">
-          <div class="card">
-            <h3>UAB „Diagnostinės sistemos“</h3>
+        <div class="section-head center reveal">
+          <p class="kicker">Kontaktai</p>
+          <h2>Susisiekite su mumis</h2>
+          <p>Mielai atsakysime į klausimus apie įrangą, reagentus ir techninę priežiūrą.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
+            <h3>Būstinė</h3>
             <dl>
-              <dt>Adresas</dt><dd>Kalvarijų Sodų 1-oji g. 2, LT-08315 Vilnius</dd>
-              <dt>Tel.</dt><dd><a href="tel:+37052740494">+370 5 274 0494</a></dd>
-              <dt>Faksas</dt><dd>+370 5 277 7620</dd>
-              <dt>El. paštas</dt><dd><a href="mailto:diagnostines.sistemos@diagsis.com">diagnostines.sistemos@diagsis.com</a></dd>
-              <dt>Darbo laikas</dt><dd>I–IV 8:00–17:00, V 8:00–16:00</dd>
+              <div><dt>Adresas</dt><dd>Kalvarijų Sodų 1-oji g. 2<br>LT-08315 Vilnius</dd></div>
+              <div><dt>Darbo laikas</dt><dd>I–IV 8:00–17:00<br>V 8:00–16:00</dd></div>
             </dl>
           </div>
-          <div class="card">
+          <div class="contact-card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+            <h3>Susisiekite</h3>
+            <dl>
+              <div><dt>Telefonas</dt><dd><a href="tel:+37052740494">+370 5 274 0494</a></dd></div>
+              <div><dt>Faksas</dt><dd>+370 5 277 7620</dd></div>
+              <div><dt>El. paštas</dt><dd><a href="mailto:diagnostines.sistemos@diagsis.com">diagnostines.sistemos@diagsis.com</a></dd></div>
+            </dl>
+          </div>
+          <div class="contact-card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
             <h3>BDAR ir kibernetinis saugumas</h3>
             <dl>
-              <dt>Kontaktinis asmuo</dt><dd>Arnonas Finkelšteinas</dd>
-              <dt>Tel.</dt><dd><a href="tel:+37064075372">+370 640 75372</a></dd>
-              <dt>El. paštas</dt><dd><a href="mailto:arnonas@diagsis.com">arnonas@diagsis.com</a></dd>
-            </dl>
-            <h3 style="margin-top:22px">Rekvizitai</h3>
-            <dl>
-              <dt>Įmonės kodas</dt><dd>122263421</dd>
-              <dt>PVM kodas</dt><dd>LT222634219</dd>
+              <div><dt>Kontaktinis asmuo</dt><dd>Arnonas Finkelšteinas</dd></div>
+              <div><dt>Telefonas</dt><dd><a href="tel:+37064075372">+370 640 75372</a></dd></div>
+              <div><dt>El. paštas</dt><dd><a href="mailto:arnonas@diagsis.com">arnonas@diagsis.com</a></dd></div>
             </dl>
           </div>
-          <div class="map">
-            <iframe title="Žemėlapis" loading="lazy"
-              src="https://www.google.com/maps?q=Kalvarij%C5%B3+Sod%C5%B3+1-oji+g.+2,+Vilnius&output=embed"></iframe>
+          <div class="map" data-title="UAB „Diagnostinės sistemos“ žemėlapyje"
+               data-src="https://www.google.com/maps?q=Kalvarij%C5%B3+Sod%C5%B3+1-oji+g.+2,+Vilnius&amp;output=embed&amp;hl=lt">
+            <div class="map-consent">
+              <div>
+                <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                <b>Kalvarijų Sodų 1-oji g. 2, Vilnius</b>
+                <p>Paspaudus žemėlapis bus įkeltas iš „Google Maps“.</p>
+                <div class="btns">
+                  <button class="btn btn-primary" type="button" data-load-map>Rodyti žemėlapį</button>
+                  <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Kalvarij%C5%B3+Sod%C5%B3+1-oji+g.+2,+Vilnius" target="_blank" rel="noopener">Maršrutas</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <div class="wrap">
-      <span>© <span id="metai">2026</span> UAB „Diagnostinės sistemos“</span>
-      <span>Įmonės kodas 122263421</span>
+      <div class="footer-grid">
+        <div>
+          <a class="footer-logo" href="#"><img src="img/diagnostines-sistemos.jpg" alt="UAB „Diagnostinės sistemos“" width="400" height="107" loading="lazy"></a>
+          <p>Laboratorinės diagnostikos įranga, reagentai ir techninė priežiūra nuo 1994 m.</p>
+        </div>
+        <div>
+          <h4>Svetainė</h4>
+          <ul>
+            <li><a href="#apie">Apie mus</a></li>
+            <li><a href="#sritys">Veiklos sritys</a></li>
+            <li><a href="#gamintojai">Gamintojai</a></li>
+            <li><a href="#gedimai">Gedimų registravimas</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontaktai</h4>
+          <ul>
+            <li>Kalvarijų Sodų 1-oji g. 2, Vilnius</li>
+            <li><a href="tel:+37052740494">+370 5 274 0494</a></li>
+            <li><a href="mailto:diagnostines.sistemos@diagsis.com">diagnostines.sistemos@diagsis.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Rekvizitai</h4>
+          <ul>
+            <li>Įmonės kodas 122263421</li>
+            <li>PVM kodas LT222634219</li>
+            <li><a href="en.html" hreflang="en" lang="en">English version</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="metai">2026</span> UAB „Diagnostinės sistemos“. Visos teisės saugomos.</span>
+        <span>Prekių ženklai priklauso jų savininkams.</span>
+      </div>
     </div>
   </footer>
 
-  <script>document.getElementById('metai').textContent = new Date().getFullYear();</script>
+  <script src="js/main.js"></script>
 </body>
 </html>
