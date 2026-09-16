@@ -113,6 +113,23 @@
     .card:hover { border-color: var(--green-line); box-shadow: 0 8px 24px rgba(16,131,74,.08); }
     .card p { margin: 0; color: var(--muted); font-size: 15.5px; }
 
+    /* Gamintojai */
+    .brands { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+    .brand {
+      background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--green);
+      border-radius: 10px; padding: 20px 22px;
+    }
+    .brand b { display: block; font-size: 18px; margin-bottom: 2px; }
+    .brand span { color: var(--muted); font-size: 15px; }
+    .more { margin-top: 36px; }
+    .more h3 { font-size: 16px; margin: 0 0 14px; color: var(--muted); font-weight: 600; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .chips li {
+      background: var(--green-soft); color: var(--green-dark); border-radius: 999px;
+      padding: 7px 14px; font-size: 14.5px; font-weight: 500;
+    }
+    @media (max-width: 360px) { .brands { grid-template-columns: 1fr; } }
+
     /* Gedimų sistema */
     .cta {
       display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap;
@@ -143,6 +160,7 @@
       <ul>
         <li><a href="#apie">Apie mus</a></li>
         <li><a href="#sritys">Veiklos sritys</a></li>
+        <li><a href="#gamintojai">Gamintojai</a></li>
         <li><a href="#gedimai">Gedimų registravimas</a></li>
         <li><a href="#kontaktai">Kontaktai</a></li>
       </ul>
@@ -217,7 +235,41 @@
       </div>
     </section>
 
-    <section id="gedimai">
+    <section id="gamintojai">
+      <div class="wrap">
+        <p class="kicker">Gamintojai</p>
+        <h2>Pasaulyje pripažinti partneriai</h2>
+        <p class="intro">Bendradarbiaujame su tarptautiniais laboratorinės diagnostikos gamintojais ir jų įrangą, reagentus bei eksploatacines medžiagas tiekiame Lietuvos sveikatos priežiūros įstaigoms.</p>
+        <div class="brands">
+          <div class="brand"><b>Diagnostica Stago</b><span>Hemostazė ir kraujo krešėjimo tyrimai</span></div>
+          <div class="brand"><b>Abbott</b><span>Klinikinė chemija, imunochemija, molekulinė diagnostika</span></div>
+          <div class="brand"><b>Randox Laboratories</b><span>Klinikinė chemija ir kokybės kontrolė</span></div>
+          <div class="brand"><b>ELITechGroup</b><span>Klinikinės chemijos analizatoriai ir reagentai</span></div>
+          <div class="brand"><b>The Binding Site</b><span>Specialiųjų baltymų tyrimai</span></div>
+          <div class="brand"><b>Tem International</b><span>Tromboelastometrija (ROTEM)</span></div>
+        </div>
+        <div class="more">
+          <h3>Taip pat dirbame su</h3>
+          <ul class="chips">
+            <li>Getein Biotech</li>
+            <li>Chrono-log</li>
+            <li>Accriva Diagnostics</li>
+            <li>DIAsource ImmunoAssays</li>
+            <li>SFRI</li>
+            <li>Abtek Biologicals</li>
+            <li>Thermo Fisher Scientific (Oxoid)</li>
+            <li>CARE diagnostica</li>
+            <li>Behnk Elektronik</li>
+            <li>SERATEC</li>
+            <li>Life Genomics</li>
+            <li>Biochemical Systems International</li>
+            <li>KOVA International</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="gedimai" class="soft">
       <div class="wrap">
         <div class="cta">
           <div>
@@ -229,7 +281,7 @@
       </div>
     </section>
 
-    <section id="kontaktai" class="soft">
+    <section id="kontaktai">
       <div class="wrap">
         <p class="kicker">Kontaktai</p>
         <h2>Susisiekite su mumis</h2>
