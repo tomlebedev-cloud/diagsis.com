@@ -1,0 +1,21 @@
+# --- Windows / OneDrive ---
+Thumbs.db
+Desktop.ini
+*.lnk
+
+# --- Redaktoriai ---
+.vscode/
+.idea/
+
+# --- Slaptažodžiai / konfigūracija ---
+.env
+.env.*
+*.key
+*.pem
+secrets.json
+
+# --- Laikini failai ---
+*.log
+*.tmp
+*.bak
+_*/
