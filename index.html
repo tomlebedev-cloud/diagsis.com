@@ -39,8 +39,9 @@
     .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 104px; }
     .nav img { height: 76px; width: auto; }
     .nav ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
-    .nav ul a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 15px; }
+    .nav ul a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 15px; white-space: nowrap; }
     .nav ul a:hover { color: var(--green); }
+    @media (max-width: 1000px) { .nav img { height: 60px; } .nav ul { gap: 18px; } .nav ul a { font-size: 14px; } }
     @media (max-width: 760px) {
       .nav { height: 80px; }
       .nav img { height: 54px; }
@@ -116,12 +117,29 @@
     /* Gamintojai */
     .brands { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
     .brand {
-      background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--green);
-      border-radius: 10px; padding: 20px 22px;
+      background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--green);
+      border-radius: 10px; padding: 22px; transition: box-shadow .2s;
     }
+    .brand:hover { box-shadow: 0 8px 24px rgba(16,131,74,.08); }
+    .brand .logo {
+      height: 84px; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--line);
+    }
+    .brand .logo img { max-height: 64px; max-width: 200px; width: auto; object-fit: contain; }
+    .brand .logo img.tall { max-height: 84px; }
+    .wordmark { font-size: 24px; font-weight: 700; letter-spacing: -.01em; color: var(--ink); text-align: center; line-height: 1.15; }
     .brand b { display: block; font-size: 18px; margin-bottom: 2px; }
     .brand span { color: var(--muted); font-size: 15px; }
-    .more { margin-top: 36px; }
+    .logowall {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px;
+      margin: 0 0 16px; padding: 0; list-style: none;
+    }
+    .logowall li {
+      background: #fff; border: 1px solid var(--line); border-radius: 10px; height: 96px;
+      display: flex; align-items: center; justify-content: center; padding: 16px;
+    }
+    .logowall img { max-height: 48px; max-width: 100%; width: auto; object-fit: contain; }
+    .more { margin-top: 44px; }
     .more h3 { font-size: 16px; margin: 0 0 14px; color: var(--muted); font-weight: 600; }
     .chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
     .chips li {
@@ -241,29 +259,49 @@
         <h2>Pasaulyje pripažinti partneriai</h2>
         <p class="intro">Bendradarbiaujame su tarptautiniais laboratorinės diagnostikos gamintojais ir jų įrangą, reagentus bei eksploatacines medžiagas tiekiame Lietuvos sveikatos priežiūros įstaigoms.</p>
         <div class="brands">
-          <div class="brand"><b>Diagnostica Stago</b><span>Hemostazė ir kraujo krešėjimo tyrimai</span></div>
-          <div class="brand"><b>Abbott</b><span>Klinikinė chemija, imunochemija, molekulinė diagnostika</span></div>
-          <div class="brand"><b>Randox Laboratories</b><span>Klinikinė chemija ir kokybės kontrolė</span></div>
-          <div class="brand"><b>ELITechGroup</b><span>Klinikinės chemijos analizatoriai ir reagentai</span></div>
-          <div class="brand"><b>The Binding Site</b><span>Specialiųjų baltymų tyrimai</span></div>
-          <div class="brand"><b>Tem International</b><span>Tromboelastometrija (ROTEM)</span></div>
+          <div class="brand">
+            <div class="logo"><img class="tall" src="img/gamintojai/stago.png" alt="Stago" loading="lazy"></div>
+            <b>Diagnostica Stago</b><span>Hemostazė ir kraujo krešėjimo tyrimai</span>
+          </div>
+          <div class="brand">
+            <div class="logo"><img src="img/gamintojai/abbott.svg" alt="Abbott" loading="lazy"></div>
+            <b>Abbott</b><span>Klinikinė chemija, imunochemija, molekulinė diagnostika</span>
+          </div>
+          <div class="brand">
+            <div class="logo"><img src="img/gamintojai/randox.png" alt="Randox" loading="lazy" style="max-height:34px"></div>
+            <b>Randox Laboratories</b><span>Klinikinė chemija ir kokybės kontrolė</span>
+          </div>
+          <div class="brand">
+            <div class="logo"><img src="img/gamintojai/elitech.svg" alt="ELITechGroup" loading="lazy"></div>
+            <b>ELITechGroup</b><span>Klinikinės chemijos analizatoriai ir reagentai</span>
+          </div>
+          <div class="brand">
+            <div class="logo"><div class="wordmark">The Binding Site</div></div>
+            <b>The Binding Site</b><span>Specialiųjų baltymų tyrimai</span>
+          </div>
+          <div class="brand">
+            <div class="logo"><div class="wordmark">TEM<br><small style="font-size:14px;font-weight:600;color:var(--muted)">International · ROTEM</small></div></div>
+            <b>Tem International</b><span>Tromboelastometrija (ROTEM)</span>
+          </div>
         </div>
         <div class="more">
           <h3>Taip pat dirbame su</h3>
+          <ul class="logowall">
+            <li><img src="img/gamintojai/thermofisher.svg" alt="Thermo Fisher Scientific" loading="lazy"></li>
+            <li><img src="img/gamintojai/chronolog.png" alt="Chrono-log" loading="lazy"></li>
+            <li><img src="img/gamintojai/diasource.svg" alt="DIAsource ImmunoAssays" loading="lazy" style="max-height:30px"></li>
+            <li><img src="img/gamintojai/sfri.png" alt="SFRI" loading="lazy"></li>
+            <li><img src="img/gamintojai/behnk.png" alt="Behnk Elektronik" loading="lazy"></li>
+            <li><img src="img/gamintojai/lifegenomics.svg" alt="Life Genomics" loading="lazy"></li>
+            <li><img src="img/gamintojai/kova.svg" alt="KOVA International" loading="lazy" style="max-height:36px"></li>
+          </ul>
           <ul class="chips">
             <li>Getein Biotech</li>
-            <li>Chrono-log</li>
             <li>Accriva Diagnostics</li>
-            <li>DIAsource ImmunoAssays</li>
-            <li>SFRI</li>
             <li>Abtek Biologicals</li>
-            <li>Thermo Fisher Scientific (Oxoid)</li>
             <li>CARE diagnostica</li>
-            <li>Behnk Elektronik</li>
             <li>SERATEC</li>
-            <li>Life Genomics</li>
             <li>Biochemical Systems International</li>
-            <li>KOVA International</li>
           </ul>
         </div>
       </div>
