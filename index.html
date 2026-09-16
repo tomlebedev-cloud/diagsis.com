@@ -10,13 +10,13 @@
     :root {
       --green: #1f8a3b;
       --green-dark: #166b2d;
-      --blue: #1d4f9c;
-      --blue-dark: #153b75;
+      --green-soft: #e9f5ec;
+      --green-line: #cfe6d5;
       --ink: #17232e;
       --muted: #56646f;
-      --line: #dde3e8;
+      --line: #e3ece5;
       --bg: #ffffff;
-      --bg-soft: #f3f6f8;
+      --bg-soft: #f4faf5;
       --radius: 14px;
       --wrap: 1120px;
     }
@@ -27,14 +27,14 @@
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
       line-height: 1.6; font-size: 17px;
     }
-    a { color: var(--blue); }
+    a { color: var(--green-dark); }
     img { max-width: 100%; height: auto; display: block; }
     .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
 
     /* Antraštė */
     header {
       position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96);
-      border-bottom: 1px solid var(--line); backdrop-filter: blur(6px);
+      border-top: 4px solid var(--green); border-bottom: 1px solid var(--line); backdrop-filter: blur(6px);
     }
     .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 72px; }
     .nav img { height: 44px; width: auto; }
@@ -49,27 +49,29 @@
 
     /* Pagrindinis blokas */
     .hero {
-      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 55%, var(--green) 130%);
-      color: #fff; padding: 96px 0 104px;
+      background: radial-gradient(900px 420px at 85% 10%, var(--green-soft), transparent 70%), #fff;
+      color: var(--ink); padding: 96px 0 104px; border-bottom: 1px solid var(--line);
     }
-    .hero .eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: 13px; opacity: .8; margin: 0 0 14px; }
-    .hero h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.12; margin: 0 0 20px; max-width: 16ch; font-weight: 700; }
-    .hero p.lead { font-size: clamp(17px, 2vw, 20px); max-width: 58ch; margin: 0 0 34px; opacity: .92; }
+    .hero .eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: 13px; color: var(--green); font-weight: 600; margin: 0 0 14px; }
+    .hero h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.12; margin: 0 0 20px; max-width: 16ch; font-weight: 700; color: var(--ink); }
+    .hero p.lead { font-size: clamp(17px, 2vw, 20px); max-width: 58ch; margin: 0 0 34px; color: var(--muted); }
     .btns { display: flex; flex-wrap: wrap; gap: 12px; }
     .btn {
       display: inline-block; padding: 13px 22px; border-radius: 999px; font-weight: 600;
       text-decoration: none; font-size: 15px; transition: background .2s, color .2s;
     }
-    .btn-light { background: #fff; color: var(--blue-dark); }
+    .btn-primary { background: var(--green); color: #fff; }
+    .btn-primary:hover { background: var(--green-dark); }
+    .btn-outline { border: 1.5px solid var(--green); color: var(--green-dark); }
+    .btn-outline:hover { background: var(--green-soft); }
+    .btn-light { background: #fff; color: var(--green-dark); }
     .btn-light:hover { background: #e8f3ea; }
-    .btn-ghost { border: 1.5px solid rgba(255,255,255,.7); color: #fff; }
-    .btn-ghost:hover { background: rgba(255,255,255,.12); }
 
     /* Skaičiai */
     .facts { margin-top: -48px; }
     .facts .grid {
       display: grid; grid-template-columns: repeat(3, 1fr); background: #fff;
-      border-radius: var(--radius); box-shadow: 0 10px 30px rgba(20,40,60,.1); overflow: hidden;
+      border-radius: var(--radius); border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(31,138,59,.08); overflow: hidden;
     }
     .fact { padding: 28px 24px; text-align: center; border-right: 1px solid var(--line); }
     .fact:last-child { border-right: 0; }
@@ -100,20 +102,21 @@
 
     .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
     .card {
+      transition: border-color .2s, box-shadow .2s;
       background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 24px;
     }
     .card .icon {
       width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center;
-      background: #e7f2ea; color: var(--green); margin-bottom: 18px;
+      background: var(--green-soft); color: var(--green); margin-bottom: 18px;
     }
-    .card:nth-child(even) .icon { background: #e6edf7; color: var(--blue); }
     .card h3 { margin: 0 0 8px; font-size: 19px; }
+    .card:hover { border-color: var(--green-line); box-shadow: 0 8px 24px rgba(31,138,59,.08); }
     .card p { margin: 0; color: var(--muted); font-size: 15.5px; }
 
     /* Gedimų sistema */
     .cta {
       display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap;
-      background: var(--blue-dark); color: #fff; border-radius: var(--radius); padding: 40px;
+      background: var(--green); color: #fff; border-radius: var(--radius); padding: 40px;
     }
     .cta h2 { color: #fff; margin-bottom: 8px; }
     .cta p { margin: 0; opacity: .88; max-width: 56ch; }
@@ -128,7 +131,7 @@
     .map iframe { width: 100%; height: 340px; border: 0; display: block; }
     @media (max-width: 760px) { .contact { grid-template-columns: 1fr; } .cta { padding: 28px; } }
 
-    footer { background: var(--ink); color: #b9c3cb; padding: 32px 0; font-size: 14px; }
+    footer { background: #fff; color: var(--muted); border-top: 4px solid var(--green); padding: 32px 0; font-size: 14px; }
     footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
   </style>
 </head>
@@ -153,8 +156,8 @@
         <h1>Pažangios laboratorinės medicinos technologijos</h1>
         <p class="lead">Daugiau nei trisdešimt metų teikiame moderniausius laboratorinės medicinos sprendimus – krešėjimo, imunologinių, genetinių ir kitų diagnostinių tyrimų srityse.</p>
         <div class="btns">
-          <a class="btn btn-light" href="#kontaktai">Susisiekti</a>
-          <a class="btn btn-ghost" href="#sritys">Veiklos sritys</a>
+          <a class="btn btn-primary" href="#kontaktai">Susisiekti</a>
+          <a class="btn btn-outline" href="#sritys">Veiklos sritys</a>
         </div>
       </div>
     </div>
