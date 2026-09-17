@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Antitrombozinio gydymo laboratorinis gidas – UAB „Diagnostinės sistemos“</title>
+  <meta name="description" content="Mokomasis laboratorijos gidas: kokį tyrimą atlikti stebint antikoaguliantus, D-dimerų ir fibrino monomerų vertinimas.">
+  <!-- Nesąrašinis puslapis: nėra meniu ir sitemap.xml, neindeksuojamas -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#10834a">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+  .gidas{
+    --ground:var(--green-tint); --surface:#FFFFFF; --surface-2:#EEF5F1; --ink:#0f1d17; --ink-2:#5d6b64; --line:#dbe6e0;
+    --accent:var(--green); --accent-ink:#FFFFFF; --accent-soft:var(--green-soft);
+    --ok:#1F7A45; --ok-soft:#E3F3E9; --warn:#8F5B00; --warn-soft:#FBF0D9; --bad:#B03A2E; --bad-soft:#F9E3E0;
+    --display:"Inter",system-ui,"Segoe UI",Arial,sans-serif; --body:"Inter",system-ui,"Segoe UI",Arial,sans-serif;
+    --mono:ui-monospace,"Cascadia Mono",Consolas,"Courier New",monospace;
+    background:var(--ground); color:var(--ink); font-size:15px; line-height:1.55;
+  }
+  .gidas .wrap{padding-block:40px 64px}
+  .gidas h1,.gidas h2,.gidas h3{letter-spacing:-.01em}
+  .gidas header.top{border-bottom-color:var(--green)}
+  .gidas .src a{color:var(--green-dark)}
+  .gidas-footer{margin-top:28px;font-size:12.5px;color:var(--ink-2);display:flex;flex-wrap:wrap;gap:6px 22px}
+  .gidas p{margin:0 0 8px}
+
+        header.top{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:flex-end;justify-content:space-between;border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:14px}
+  h1{font-family:var(--display);font-weight:700;font-size:clamp(26px,4vw,38px);line-height:1.08;margin:4px 0 0;text-wrap:balance}
+  .src{font-size:13px;color:var(--ink-2);max-width:360px}
+  .notice{background:var(--warn-soft);color:var(--ink);border:1px solid color-mix(in srgb,var(--warn) 35%,transparent);border-radius:6px;padding:9px 13px;font-size:13.5px;margin-bottom:22px}
+  .notice b{color:var(--warn)}
+  .layout{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start}
+  @media (max-width:860px){.layout{grid-template-columns:1fr}}
+  nav.sit{position:sticky;top:calc(var(--header-h) + 16px);display:flex;flex-direction:column;gap:18px}
+  @media (max-width:860px){nav.sit{position:static}}
+  .grp h2{font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);margin:0 0 6px}
+  .grp ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px}
+  .grp button{all:unset;box-sizing:border-box;display:flex;gap:10px;align-items:baseline;width:100%;padding:7px 10px;border-radius:5px;cursor:pointer;font-size:14.5px;color:var(--ink)}
+  .grp button:hover{background:var(--surface-2)}
+  .grp button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  .grp button[aria-current="true"]{background:var(--accent);color:var(--accent-ink);font-weight:600}
+  .grp button .code{font-family:var(--mono);font-size:11px;opacity:.75;min-width:44px}
+  main.panel{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:26px 28px 30px;min-width:0}
+  @media (max-width:520px){main.panel{padding:18px 16px 22px}}
+  .panel-head{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;justify-content:space-between;margin-bottom:6px}
+  .panel h2.title{font-family:var(--display);font-weight:700;font-size:clamp(22px,3vw,28px);line-height:1.15;margin:0;text-wrap:balance}
+  .ts{font-family:var(--mono);font-size:12px;background:var(--surface-2);color:var(--ink-2);padding:2px 7px;border-radius:4px;white-space:nowrap}
+  .when{color:var(--ink-2);margin:0 0 20px;max-width:70ch}
+  .step{display:grid;grid-template-columns:34px 1fr;gap:0 14px;padding:16px 0;border-top:1px solid var(--line)}
+  .step .n{font-family:var(--mono);font-weight:600;font-size:13px;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;margin-top:1px}
+  .step h3{font-family:var(--display);font-weight:600;font-size:17px;margin:0 0 6px}
+  .step p{margin:0 0 8px;max-width:72ch}
+  .step ul{margin:0 0 8px;padding-left:18px}
+  .step li{margin-bottom:3px}
+  .testname{display:inline-block;font-family:var(--mono);font-weight:600;font-size:15px;background:var(--accent-soft);color:var(--ink);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);padding:3px 10px;border-radius:5px;margin:0 6px 6px 0}
+  .avoid{display:inline-block;font-family:var(--mono);font-size:13.5px;text-decoration:line-through;color:var(--ink-2);margin-right:6px}
+  .tbl{overflow-x:auto;margin:4px 0 10px}
+  table{border-collapse:collapse;min-width:420px;width:100%;font-size:14px}
+  th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);border-bottom:1.5px solid var(--ink)}
+  td.v{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:500}
+  tr.hl td{background:var(--accent-soft)}
+  .calc{background:var(--surface-2);border-radius:7px;padding:14px 16px;display:flex;flex-direction:column;gap:12px}
+  .fields{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:flex-end}
+  .field{display:flex;flex-direction:column;gap:4px;min-width:0}
+  .field label{font-size:12.5px;color:var(--ink-2)}
+  .field input,.field select{font-family:var(--mono);font-size:16px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:7px 10px;width:170px;max-width:100%}
+  .field select{font-family:var(--body);font-size:14.5px;width:250px}
+  .field input:focus-visible,.field select:focus-visible{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
+  .unit{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+  .check{display:flex;gap:8px;align-items:center;font-size:14px}
+  .result{border-radius:6px;padding:10px 13px;border-left:5px solid var(--line);background:var(--surface)}
+  .result .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;font-weight:600}
+  .result .t{margin-top:2px}
+  .result.ok{border-color:var(--ok);background:var(--ok-soft)} .result.ok .k{color:var(--ok)}
+  .result.warn{border-color:var(--warn);background:var(--warn-soft)} .result.warn .k{color:var(--warn)}
+  .result.bad{border-color:var(--bad);background:var(--bad-soft)} .result.bad .k{color:var(--bad)}
+  .result.idle .k{color:var(--ink-2)}
+  .comment{position:relative;background:var(--surface);border:1px dashed var(--ink-2);border-radius:6px;padding:12px 14px;font-size:14.5px;max-width:78ch}
+  .comment p{margin:0}
+  .copy{margin-top:10px;font-family:var(--body);font-size:13.5px;font-weight:600;background:var(--ink);color:var(--surface);border:0;border-radius:5px;padding:7px 14px;cursor:pointer}
+  .copy:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .note{font-size:13px;color:var(--ink-2);margin-top:6px}
+  .flag{font-family:var(--mono);font-size:11px;background:var(--warn-soft);color:var(--warn);padding:1px 6px;border-radius:3px;white-space:nowrap}
+  @media (prefers-reduced-motion:no-preference){.result{transition:background-color .15s ease,border-color .15s ease}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#turinys">Pereiti prie turinio</a>
+
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand-link" href="index.html" aria-label="UAB „Diagnostinės sistemos“ – pradžia">
+        <img src="img/diagnostines-sistemos.jpg" alt="UAB „Diagnostinės sistemos“" width="400" height="107">
+      </a>
+      <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false">
+        <span></span><b class="visually-hidden">Meniu</b>
+      </button>
+      <ul class="menu" id="menu">
+        <li><a href="index.html#apie">Apie mus</a></li>
+        <li><a href="index.html#sritys">Veiklos sritys</a></li>
+        <li><a href="index.html#gamintojai">Gamintojai</a></li>
+        <li><a href="index.html#gedimai">Servisas</a></li>
+        <li><a href="index.html#kontaktai">Kontaktai</a></li>
+        <li class="lang"><a href="en.html" hreflang="en" lang="en" aria-label="English version">EN</a></li>
+        <li class="cta-link"><a href="index.html#kontaktai">Susisiekti</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="turinys" class="gidas">
+  <div class="wrap">
+  <header class="top">
+    <div>
+      <p class="eyebrow"><b>Laboratorijai</b> Hemostazė ir antikoaguliantai</p>
+      <h1>Antitrombozinio gydymo laboratorinis gidas</h1>
+    </div>
+    <div class="src">Parengta pagal prof. Juliaus Ptašeko pranešimą „2025 m. nacionalinės jungtinės antitrombozinio gydymo gairės: hemostazė ir senėjimas“. Ribos ir lentelės iš leidinio „Nacionalinės jungtinės antitrombozinio gydymo ir profilaktikos gairės“ (LSMU, VU, Kaunas, 2025), VIII skyrius. Laiko žymos nurodo vietą pranešimo įraše.</div>
+  </header>
+  <div class="notice"><b>Mokomoji priemonė, ne gairių pakaitalas ir ne klinikinė rekomendacija.</b> Ribos ir intervalai perkelti iš pranešimo skaidrių ir žodžių. Vertės, pažymėtos <span class="flag">tikrinti</span>, įraše buvo neaiškios. Prieš taikydami, sutikrinkite su gairių tekstu ir savo laboratorijos patvirtintomis referencinėmis vertėmis.</div>
+
+  <div class="layout">
+    <nav class="sit" id="nav" aria-label="Situacijos"></nav>
+    <main class="panel" id="panel" aria-live="polite"></main>
+  </div>
+
+  <div class="gidas-footer">
+    <span>NH – nefrakcionuotas heparinas</span><span>MMMH – mažos molekulinės masės heparinai</span><span>TGAK – tiesioginio veikimo geriamieji antikoaguliantai</span><span>VKA – vitamino K antagonistai</span><span>FM – fibrino monomerai</span><span>AKL – aktyvuotas krešėjimo laikas</span>
+  </div>
+</div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="footer-logo" href="index.html"><img src="img/diagnostines-sistemos.jpg" alt="UAB „Diagnostinės sistemos“" width="400" height="107" loading="lazy"></a>
+          <p>Laboratorinės diagnostikos įranga, reagentai ir techninė priežiūra nuo 1994 m.</p>
+        </div>
+        <div>
+          <h4>Svetainė</h4>
+          <ul>
+            <li><a href="index.html#apie">Apie mus</a></li>
+            <li><a href="index.html#sritys">Veiklos sritys</a></li>
+            <li><a href="index.html#gamintojai">Gamintojai</a></li>
+            <li><a href="index.html#gedimai">Gedimų registravimas</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontaktai</h4>
+          <ul>
+            <li>Kalvarijų Sodų 1-oji g. 2, Vilnius</li>
+            <li><a href="tel:+37052740494">+370 5 274 0494</a></li>
+            <li><a href="mailto:diagnostines.sistemos@diagsis.com">diagnostines.sistemos@diagsis.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Rekvizitai</h4>
+          <ul>
+            <li>Įmonės kodas 122263421</li>
+            <li>PVM kodas LT222634219</li>
+            <li><a href="en.html" hreflang="en" lang="en">English version</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="metai">2026</span> UAB „Diagnostinės sistemos“. Visos teisės saugomos.</span>
+        <span>Prekių ženklai priklauso jų savininkams.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+const fmt = (n, d=2) => Number(n).toLocaleString('lt-LT',{maximumFractionDigits:d});
+const num = v => { const x = parseFloat(String(v).replace(',', '.')); return isNaN(x) ? null : x; };
+
+const MMMH = [
+  ['Bemiparinas, 1 k./d.', 1.4], ['Certoparinas, 2 k./d.', 1.0], ['Dalteparinas, 1 k./d.', 1.05],
+  ['Enoksaparinas, 2 k./d.', 1.2], ['Nadroparinas, 1 k./d.', 1.3], ['Nadroparinas, 2 k./d.', 1.0],
+  ['Reviparinas, 1 k./d.', 1.3], ['Tinzaparinas, 1 k./d.', 0.85]
+];
+const AKL = [
+  ['Inkstų dializė', 120, 200, '0,3–1,0 V/ml'],
+  ['Vainikinių arterijų angiografija / PVAI', 250, 350, '1,0–2,0 V/ml'],
+  ['Angiografija / PVAI su GP IIb/IIIa inhibitoriumi', 200, 250, 'mažesnis intervalas'],
+  ['Dirbtinė kraujo apytaka', 400, null, '4,0–5,0 V/ml']
+];
+
+const S = [
+ { id:'nh', group:'Antikoaguliantų stebėsena', code:'NH', title:'Pacientas gauna nefrakcionuotą hepariną', ts:'18:08',
+   when:'Intraveninė heparino infuzija. Reikia įvertinti, ar dozė terapinė.',
+   test:`<span class="testname">anti-Xa</span> <span class="avoid">ADTL kaip galutinis</span>
+     <p>Galutinai sutarta: tiksliausias NH kontrolės būdas yra <b>anti-Xa tyrimas</b>. ADTL reaguoja į 8 krešėjimo faktorius, o heparinas veikia tik 2, todėl kitų faktorių disbalansas duoda klaidinantį ADTL.</p>
+     <ul><li>ADTL tinka tik kaip <b>pirminis</b> testas.</li><li>Jei ADTL neatitinka skirtos heparino dozės, ADTL nebekartojamas: toliau dirbama su anti-Xa.</li></ul>`,
+   ranges:`<div class="tbl"><table><tr><th>Rodiklis</th><th>Terapinis intervalas</th><th>Šaltinis</th></tr>
+     <tr class="hl"><td>anti-Xa</td><td class="v">0,3–0,7 TV/ml</td><td>ACCP, 9 leid.</td></tr>
+     <tr><td>anti-Xa</td><td class="v">0,3–0,8 (iki 1,2) TV/ml</td><td>gairių skaidrė (21:20)</td></tr>
+     <tr><td>ADTL santykis (paciento / kontrolės)</td><td class="v">1,5–2,5 karto</td><td>gairės</td></tr>
+     <tr><td>DATL, atitinkantis 0,3–0,7 anti-Xa</td><td class="v">48–108 s</td><td>ACCP; priklauso nuo reagento ir koagulometro</td></tr></table></div>
+     <p class="note">Tą pačią anti-Xa vertę gali atitikti DATL pailgėjimas nuo 1,6–2,7 iki 3,7–6,2 karto, todėl ADTL terapinis intervalas turi būti kalibruojamas pagal anti-Xa.</p>`,
+   calc:'nh',
+   comment:'NH poveikis įvertintas anti-Xa tyrimu. Rezultatas: {v} TV/ml ({cls}). Terapinis intervalas 0,3–0,7 TV/ml (ACCP). ADTL heparino poveikį atspindi netiesiogiai, todėl dozę rekomenduojama koreguoti pagal anti-Xa.'
+ },
+ { id:'mmmh', group:'Antikoaguliantų stebėsena', code:'MMMH', title:'Pacientas gauna mažos molekulinės masės hepariną', ts:'19:39',
+   when:'MMMH įprastai laboratoriškai nestebimas. Tyrimas reikalingas tik specialiose situacijose.',
+   test:`<span class="testname">anti-Xa</span>
+     <p><b>Kada tirti:</b></p>
+     <ul><li>inkstų funkcijos nepakankamumas;</li><li>nėštumas;</li><li>viršsvoris;</li><li>pediatriniai pacientai;</li><li>ruošiant operacijai, kai reikia atmesti liekamąjį MMMH poveikį;</li><li>kai gali būti sutrikę vaisto eliminacijos ar metabolizmo keliai.</li></ul>
+     <p><b>Mėginio laikas:</b> anti-Xa vertės gairių lentelėje pateiktos <b>praėjus 4 val. po injekcijos</b>.</p>`,
+   ranges:`<div class="tbl"><table><tr><th>MMMH preparatas</th><th>Vidutinė anti-Xa po 4 val.</th></tr>
+     ${MMMH.map(r=>`<tr><td>${r[0]}</td><td class="v">~${fmt(r[1])} V/ml</td></tr>`).join('')}
+     <tr class="hl"><td>Bendras MMMH terapinis intervalas</td><td class="v">0,3–1,2 TV/ml</td></tr></table></div>
+     <p class="note">Kiekvienas komercinis preparatas turi savo anti-Xa aktyvumą, todėl rezultatą lyginkite su konkretaus preparato verte.</p>`,
+   calc:'mmmh',
+   comment:'MMMH ({drug}) poveikis įvertintas anti-Xa tyrimu praėjus 4 val. po injekcijos. Rezultatas: {v} V/ml. Vidutinė šio preparato terapinės dozės vertė ~{exp} V/ml, bendras MMMH intervalas 0,3–1,2 TV/ml ({cls}).'
+ },
+ { id:'akl', group:'Antikoaguliantų stebėsena', code:'AKL', title:'Heparinas procedūros metu', ts:'19:39',
+   when:'Dializė, vainikinių arterijų angiografija ar PVAI, dirbtinė kraujo apytaka. Reikia skirti techninį klinikinį intervalą nuo terapinio.',
+   test:`<span class="testname">AKL</span><span class="testname">anti-Xa</span>
+     <p>Procedūrų metu naudojamas <b>aktyvuotas krešėjimo laikas</b>. Jo intervalai atitinka gerokai didesnes anti-Xa vertes nei įprastas terapinis intervalas 0,3–0,7.</p>`,
+   ranges:`<div class="tbl"><table><tr><th>Procedūra</th><th>AKL</th><th>Atitinka anti-Xa</th></tr>
+     ${AKL.map(r=>`<tr><td>${r[0]}</td><td class="v">${r[2]?r[1]+'–'+r[2]:'> '+r[1]} s</td><td class="v">${r[3]}</td></tr>`).join('')}</table></div>`,
+   calc:'akl',
+   comment:'AKL procedūros metu ({proc}): {v} s. Tikslinis intervalas {range} ({cls}). Tai techninis klinikinis intervalas, jis nelyginamas su terapiniu anti-Xa intervalu 0,3–0,7 TV/ml.'
+ },
+ { id:'xa', group:'Antikoaguliantų stebėsena', code:'TGAK-Xa', title:'Rivaroksabanas, apiksabanas, edoksabanas', ts:'21:20',
+   when:'Xa faktoriaus slopintojai. Rutiniškai nestebimi. Tiriama, kai reikia žinoti vaisto koncentraciją arba įvertinti gydymo efektyvumą.',
+   test:`<span class="testname">anti-Xa</span>
+     <p>Anti-Xa tyrimas tinka ir Xa faktoriaus slopintojų koncentracijai vertinti. Gydymo efektyvumui kartu stebimi <b>fibrino monomerai</b> (žr. „Gydymo efektyvumas“).</p>`,
+   ranges:`<div class="tbl"><table><tr><th>Grupė</th><th>Terapinė koncentracija</th></tr>
+     <tr class="hl"><td>Rivaroksabano grupė (Xa faktoriaus slopintojai)</td><td class="v">100–140 <span class="flag">tikrinti vienetus</span></td></tr></table></div>
+     <p class="note">Skaidrėje vienetai nurodyti kaip „mgk/ml“. Prieš naudojant būtina sutikrinti su gairėmis.</p>`,
+   calc:null,
+   comment:'Xa faktoriaus slopintojo poveikis įvertintas anti-Xa tyrimu. Gydymo efektyvumui vertinti rekomenduojama kartu stebėti fibrino monomerų dinamiką.'
+ },
+ { id:'dabi', group:'Antikoaguliantų stebėsena', code:'TGAK-IIa', title:'Dabigatranas', ts:'21:20',
+   when:'Tiesioginis trombino (IIa faktoriaus) slopintojas.',
+   test:`<span class="testname">Ekarino laikas (ECA)</span> <span class="avoid">anti-Xa</span>
+     <p>Dabigatranas veikia trombiną, ne Xa faktorių, todėl anti-Xa tyrimas jam netinka. Naudojamas <b>ekarino laiko tyrimas</b>.</p>`,
+   ranges:`<div class="tbl"><table><tr><th>Grupė</th><th>Terapinė koncentracija</th></tr>
+     <tr class="hl"><td>Dabigatrano grupė (IIa faktoriaus, trombino slopintojai)</td><td class="v">100–140 <span class="flag">tikrinti vienetus</span></td></tr></table></div>
+     <p class="note">Skaidrėje nurodyta „mkg/ml“. Sutikrinkite vienetus su gairėmis.</p>`,
+   calc:null,
+   comment:'Dabigatrano poveikis įvertintas ekarino laiko (ECA) tyrimu. Anti-Xa tyrimas tiesioginiams trombino slopintojams netinka.'
+ },
+ { id:'vka', group:'Antikoaguliantų stebėsena', code:'VKA', title:'Varfarinas ir kiti VKA', ts:'21:41',
+   when:'Vitamino K antagonistams būtina nuolatinė terapinio poveikio laboratorinė kontrolė.',
+   test:`<span class="testname">PL, Owren metodas</span>
+     <p>Gairės rekomenduoja protrombino laiką nustatyti <b>Owren metodu</b>. Tai metodas, o ne komercinis pavadinimas. Jis specifiškai vertina tik nuo vitamino K priklausomų faktorių <b>FII, FVII, FX</b> veiklą.</p>
+     <ul><li>Nauda: pacientui keičiant laboratoriją ar ligoninę, PL dinamika išlieka palyginama.</li></ul>`,
+   ranges:`<p class="note">Terapinis intervalas pranešime nenurodytas. Taikykite gairių ir savo laboratorijos patvirtintas vertes.</p>`,
+   calc:null,
+   comment:'VKA poveikis įvertintas protrombino laiko tyrimu Owren metodu, kuris specifiškai atspindi nuo vitamino K priklausomų faktorių (FII, FVII, FX) veiklą.'
+ },
+ { id:'dd', group:'Trombozės diagnostika', code:'D-dim', title:'Įtariama GVT ar PATE (ne nėštumas)', ts:'08:28',
+   when:'Reikia atmesti giliųjų venų trombozę ar plaučių arterijos tromboemboliją, kai klinikinė rizika maža arba vidutinė.',
+   test:`<span class="testname">D-dimerai (didelio specifiškumo)</span>
+     <p>Reikalavimai tyrimui: <b>jautrumas ≥ 99,7 %</b>, <b>specifiškumas ≥ 75 %</b>. Didelio specifiškumo tyrimas duoda maždaug 2–3 kartus mažiau klaidingai teigiamų rezultatų.</p>
+     <p><b>Vyresniems pacientams būtina amžiui koreguota ribinė vertė</b>, nes D-dimerų koncentracija didėja su amžiumi ir mažėja tyrimo specifiškumas.</p>`,
+   ranges:`<div class="tbl"><table><tr><th>Amžius</th><th>Ribinė vertė</th></tr>
+     <tr><td>&lt; 65 m.</td><td class="v">500 ng/ml</td></tr>
+     <tr class="hl"><td>≥ 65 m.</td><td>+100 ng/ml kas 10 metų (ISTH algoritmas): 65 m. → 600, 75 m. → 700, 85 m. → 800 <span class="flag">tikrinti</span></td></tr></table></div>
+     <p class="note">Įraše skaičių seka buvo neaiški. Skaičiuoklė taiko pranešėjo žodžiais nusakytą taisyklę. Taikykite gairių formulę, jei ji skiriasi.</p>`,
+   calc:'dd',
+   comment:'D-dimerai: {v} ng/ml. Paciento amžius {age} m., amžiui koreguota ribinė vertė {cut} ng/ml. {cls}.'
+ },
+ { id:'preg', group:'Trombozės diagnostika', code:'FM', title:'Nėščioji: įtariama GVT ar PATE', ts:'23:14',
+   when:'Nėštumo metu D-dimerai padidėja nepriklausomai nuo trombozės, dėl vaisiaus ir placentos kraujotakos ypatumų.',
+   test:`<span class="testname">Fibrino monomerai (FM)</span> <span class="avoid">D-dimerai</span>
+     <ul><li>D-dimerų ribinė vertė ir Wells skalė nėštumo metu <b>netaikomos</b>.</li><li>FM visą nėštumą nesikeičia, todėl gairėse jie apibrėžti kaip <b>vienintelis ankstyvas laboratorinis</b> PATE ir GVT rodmuo nėščiosioms.</li></ul>`,
+   ranges:`<div class="tbl"><table><tr><th>FM</th><th>Interpretacija</th><th>Veiksmas</th></tr>
+     <tr><td class="v">&lt; 6,0 µg/ml</td><td>GVT tikimybė minimali</td><td>profilaktika nereikalinga</td></tr>
+     <tr><td class="v">6,0–10,0 µg/ml</td><td>neapibrėžta</td><td>kartoti FM po 5–7 d.; jei vertės tos pačios ar mažesnės, profilaktika nereikalinga</td></tr>
+     <tr><td class="v">10,0–25,0 µg/ml</td><td>aktyvi veninė trombogenezė, gana didelė GVT/PE tikimybė</td><td>profilaktika MMMH, kartoti po 5–7 d.; jei FM didėja, intensyvesnė profilaktika arba gydymas</td></tr>
+     <tr><td class="v">&gt; 25,0 µg/ml</td><td>vyksta GVT/PE procesas</td><td>skiriamas gydymas</td></tr></table></div>`,
+   calc:'fm',
+   comment:'Fibrino monomerai: {v} µg/ml. {cls}. Nėštumo metu D-dimerai padidėja nepriklausomai nuo trombozės, todėl trombogenezei vertinti naudojami FM.'
+ },
+ { id:'eff', group:'Gydymo efektas', code:'FM Δ', title:'Ar antitrombozinis gydymas veikia?', ts:'22:15',
+   when:'Pacientas gydomas dėl trombozės. Reikia įvertinti, ar trombozė regresuoja, ar progresuoja, nelaukiant, kol pasireikš klinikinis vaizdas.',
+   test:`<span class="testname">Fibrino monomerai</span><span class="testname">D-dimerai</span><span class="testname">anti-Xa</span>
+     <div class="tbl"><table><tr><th>Žymuo</th><th>Tipas</th><th>Ką rodo</th></tr>
+     <tr><td>FM</td><td>prieštrombotinis, ankstyvas</td><td>ar vis dar vyksta trombogenezė</td></tr>
+     <tr><td>D-dimerai</td><td>potrombotinis</td><td>trombozės regresiją ar progresiją</td></tr>
+     <tr><td>anti-Xa</td><td>vaisto poveikis</td><td>ar pasiekta terapinė koncentracija (MMMH, NH, Xa slopintojai)</td></tr></table></div>
+     <p>Pagrindinė mintis: nelaukti, pvz., 80 % obstrukcijos. Trombogenezės dinamika matoma biochemiškai anksčiau.</p>`,
+   ranges:`<ul><li><b>FM reikšmingai padidėja (&gt; 30 %):</b> skiriamas gydymas ir stebimas jo efektyvumas anti-Xa tyrimu. Jei FM toliau didėja, tai gali rodyti terapijos neveiksmingumą ar recidyvo tikimybę, todėl terapiją reikia koreguoti.</li>
+     <li><b>FM mažėja arba stabilūs:</b> tęsti ir stebėti. Esant regresijai, FM turėtų mažėti, o tai rodo terapijos efektyvumą.</li></ul>`,
+   calc:'trend',
+   comment:'Fibrino monomerų dinamika: {a} → {b} µg/ml ({pct}). {cls}.'
+ },
+ { id:'noclin', group:'Rezultatų komentavimas', code:'Žymuo↑', title:'Padidėję žymenys be trombozės požymių', ts:'15:29',
+   when:'Rastas padidėjęs D-dimerų ar FM lygis arba trombofilinė mutacija, tačiau klinikinių trombozės ar embolijos požymių nėra.',
+   test:`<p>Laboratorija gali atkreipti gydytojo dėmesį, bet <b>neturėtų siūlyti profilaktinio antikoaguliantų gydymo</b> vien dėl laboratorinių radinių.</p>
+     <ul><li>Gairės: nėra indikacijų profilaktiniam gydymui antikoaguliantais pacientams, kuriems nustatyta intravaskulinė koaguliacija (padidėję D-dimerai ar FM), bet nėra trombozės ar embolijos požymių.</li>
+     <li>Tas pats taikoma trombofilinei būklei ar mutacijai be buvusios ar esamos nechirurginės trombozės.</li>
+     <li>Gydymas koreguojamas tik atsiradus trombozei tokiame fone.</li></ul>`,
+   ranges:'', calc:null,
+   comment:'Nustatytas padidėjęs krešėjimo aktyvacijos žymuo. Klinikinių trombozės ar embolijos požymių nesant, profilaktinis gydymas antikoaguliantais vien dėl šio radinio gairėse nerekomenduojamas. Rezultatą vertinti kartu su klinikine informacija.'
+ },
+ { id:'elder', group:'Rezultatų komentavimas', code:'65+', title:'Vyresnio paciento padidėję D-dimerai', ts:'09:53',
+   when:'Senyvas pacientas, D-dimerai virš amžiaus ribos, trombozė atmesta arba neįtariama.',
+   test:`<p>Padidėję D-dimerai vyresniame amžiuje yra ir <b>prognostinis žymuo</b>. Manoma, kad jie atspindi lėtinio uždegimo būklę.</p>
+     <ul><li><b>Duke universitetas:</b> sveikiems ≥ 70 m. žmonėms padidėję D-dimerai siejami su <b>4 kartus didesne</b> mirties ar funkcinės priklausomybės rizika per 2 metus.</li>
+     <li><b>BARI 2D</b> (ŠKL rizika ir 2 tipo diabetas): su amžiumi D-dimerai didėja, o PAI-1 mažėja. Fibrinolizės aktyvacija gali būti kompensacinis mechanizmas.</li>
+     <li>Senstant gali didėti ir fibrinogeno, VIII faktoriaus bei VWF koncentracijos.</li></ul>`,
+   ranges:'', calc:null,
+   comment:'D-dimerų koncentracija viršija amžiui koreguotą ribinę vertę. Vyresniame amžiuje padidėję D-dimerai siejami su nepalankia prognoze ir lėtiniu uždegimu. Rekomenduojama rezultatą aptarti su gydančiu gydytoju. Profilaktinis antikoaguliantų skyrimas vien dėl šio radinio nerekomenduojamas.'
+ }
+];
+
+const nav = document.getElementById('nav'), panel = document.getElementById('panel');
+const groups = [...new Set(S.map(s=>s.group))];
+nav.innerHTML = groups.map(g => `<div class="grp"><h2>${g}</h2><ul>${S.filter(s=>s.group===g).map(s=>`<li><button type="button" data-id="${s.id}"><span class="code">${s.code}</span><span>${s.title}</span></button></li>`).join('')}</ul></div>`).join('');
+
+function field(id,label,unit,val){return `<div class="field"><label for="${id}">${label}${unit?` <span class="unit">${unit}</span>`:''}</label><input id="${id}" inputmode="decimal" autocomplete="off" value="${val??''}"></div>`}
+function sel(id,label,opts){return `<div class="field"><label for="${id}">${label}</label><select id="${id}">${opts.map((o,i)=>`<option value="${i}">${o}</option>`).join('')}</select></div>`}
+
+const CALC = {
+  nh:{ html:()=>`<div class="fields">${field('c-v','anti-Xa rezultatas','TV/ml','0,45')}</div>`,
+    run(){ const v=num(val('c-v')); if(v===null) return null;
+      if(v<0.3) return {c:'bad',k:'Žemiau intervalo',t:'Nepakankama antikoaguliacija, tikėtina per maža heparino dozė.',cls:'žemiau terapinio intervalo',v};
+      if(v<=0.7) return {c:'ok',k:'Terapinis intervalas',t:'Heparino poveikis terapinis (0,3–0,7 TV/ml).',cls:'terapinis intervalas',v};
+      if(v<=0.8) return {c:'warn',k:'Ribinė vertė',t:'Virš ACCP intervalo, bet gairių skaidrės intervale 0,3–0,8 TV/ml.',cls:'ribinė vertė',v};
+      return {c:'bad',k:'Virš intervalo',t:'Per didelė antikoaguliacija. Gairių skaidrėje intervalas nurodytas „0,3–0,8 (iki 1,2)“.',cls:'virš terapinio intervalo',v}; } },
+  mmmh:{ html:()=>`<div class="fields">${sel('c-d','Preparatas',MMMH.map(m=>m[0]))}${field('c-v','anti-Xa po 4 val.','V/ml','1,1')}</div>`,
+    run(){ const v=num(val('c-v')); if(v===null) return null; const m=MMMH[+val('c-d')]; const base={v,drug:m[0],exp:fmt(m[1])};
+      if(v<0.3) return {...base,c:'bad',k:'Žemiau intervalo',t:`Mažiau nei 0,3 V/ml. Šio preparato vidutinė terapinė vertė ~${fmt(m[1])} V/ml.`,cls:'žemiau intervalo'};
+      if(v>1.2) return {...base,c:'bad',k:'Virš intervalo',t:`Daugiau nei 1,2 V/ml. Galima kaupimosi rizika, ypač esant inkstų nepakankamumui. Šio preparato vidutinė vertė ~${fmt(m[1])} V/ml.`,cls:'virš intervalo'};
+      return {...base,c:'ok',k:'Intervale',t:`MMMH intervale 0,3–1,2. Šio preparato vidutinė vertė ~${fmt(m[1])} V/ml, jūsų rezultatas ${v>=m[1]?'ne mažesnis už ją':'mažesnis už ją'}.`,cls:'intervale'}; } },
+  akl:{ html:()=>`<div class="fields">${sel('c-p','Procedūra',AKL.map(a=>a[0]))}${field('c-v','AKL','s','220')}</div>`,
+    run(){ const v=num(val('c-v')); if(v===null) return null; const a=AKL[+val('c-p')]; const range=a[2]?`${a[1]}–${a[2]} s`:`> ${a[1]} s`; const base={v,proc:a[0].toLowerCase(),range};
+      if(v<a[1]) return {...base,c:'bad',k:'Žemiau tikslo',t:`Tikslinis AKL ${range}. Antikoaguliacija procedūrai nepakankama.`,cls:'žemiau tikslinio intervalo'};
+      if(a[2] && v>a[2]) return {...base,c:'warn',k:'Virš tikslo',t:`Tikslinis AKL ${range}.`,cls:'virš tikslinio intervalo'};
+      return {...base,c:'ok',k:'Tikslinis intervalas',t:`AKL atitinka ${range} (anti-Xa ${a[3]}).`,cls:'tikslinis intervalas'}; } },
+  dd:{ html:()=>`<div class="fields">${field('c-a','Amžius','m.','78')}${field('c-v','D-dimerai','ng/ml','650')}<label class="check"><input type="checkbox" id="c-p"> Pacientė nėščia</label></div>`,
+    run(){ if(document.getElementById('c-p').checked) return {c:'warn',k:'Netaikyti D-dimerų',t:'Nėštumo metu D-dimerai padidėja nepriklausomai nuo trombozės. Naudokite fibrino monomerus (situacija „Nėščioji“).',cls:'nėštumo metu D-dimerų riba netaikoma',v:'–',age:'–',cut:'–'};
+      const age=num(val('c-a')), v=num(val('c-v')); if(age===null||v===null) return null;
+      const cut = age<65 ? 500 : 500 + 100*(1+Math.floor((age-65)/10));
+      if(v<cut) return {c:'ok',k:'Žemiau ribos',t:`Riba ${cut} ng/ml. Esant mažai ar vidutinei klinikinei rizikai, GVT ir PATE galima atmesti.`,cls:'Rezultatas žemiau amžiui koreguotos ribos, todėl esant mažai ar vidutinei klinikinei rizikai GVT ir PATE galima atmesti',v:fmt(v,0),age:fmt(age,0),cut};
+      return {c:'bad',k:'Virš ribos',t:`Riba ${cut} ng/ml. GVT ir PATE neatmestos, reikalingas tolesnis ištyrimas.${age>=65?' Vyresniame amžiuje padidėję D-dimerai taip pat yra prognostinis žymuo.':''}`,cls:'Rezultatas viršija amžiui koreguotą ribą, todėl GVT ir PATE laboratoriškai neatmestos',v:fmt(v,0),age:fmt(age,0),cut}; } },
+  fm:{ html:()=>`<div class="fields">${field('c-v','Fibrino monomerai','µg/ml','8,4')}</div>`,
+    run(){ const v=num(val('c-v')); if(v===null) return null;
+      if(v<6) return {c:'ok',k:'< 6,0 µg/ml',t:'GVT tikimybė minimali. Trombozės profilaktika nereikalinga.',cls:'GVT tikimybė minimali, profilaktika nereikalinga',v:fmt(v,1)};
+      if(v<=10) return {c:'warn',k:'6,0–10,0 µg/ml',t:'Pakartoti FM po 5–7 dienų. Jei vertės tos pačios ar mažesnės, profilaktika nereikalinga.',cls:'Rekomenduojama pakartoti FM tyrimą po 5–7 dienų',v:fmt(v,1)};
+      if(v<=25) return {c:'bad',k:'10,0–25,0 µg/ml',t:'Aktyvi veninė trombogenezė, gana didelė GVT/PE tikimybė. Rekomenduojama profilaktika MMMH ir pakartotinis FM po 5–7 d.',cls:'Aktyvi veninė trombogenezė; rekomenduojama trombozės profilaktika MMMH ir pakartotinis tyrimas po 5–7 dienų',v:fmt(v,1)};
+      return {c:'bad',k:'> 25,0 µg/ml',t:'Vyksta venų trombozės (GVT/PE) procesas. Turi būti skiriamas gydymas.',cls:'Vyksta aktyvi trombogenezė (GVT/PE procesas)',v:fmt(v,1)}; } },
+  trend:{ html:()=>`<div class="fields">${field('c-a','FM ankstesnis','µg/ml','12,0')}${field('c-b','FM dabartinis','µg/ml','16,5')}</div>`,
+    run(){ const a=num(val('c-a')), b=num(val('c-b')); if(a===null||b===null||a<=0) return null;
+      const p=(b-a)/a*100, pct=(p>0?'+':'')+fmt(p,0)+' %', base={a:fmt(a,1),b:fmt(b,1),pct};
+      if(p>30) return {...base,c:'bad',k:`Padidėjo ${pct}`,t:'Reikšmingas FM padidėjimas (> 30 %). Gali rodyti terapijos neveiksmingumą ar recidyvo tikimybę. Vertinti gydymo efektyvumą anti-Xa tyrimu ir koreguoti terapiją.',cls:'Reikšmingas FM padidėjimas (> 30 %), todėl rekomenduojama įvertinti antikoaguliacinės terapijos efektyvumą (anti-Xa)'};
+      if(p>0) return {...base,c:'warn',k:`Padidėjo ${pct}`,t:'Nedidelis padidėjimas (≤ 30 %). Tęsti stebėseną.',cls:'Nereikšmingas FM padidėjimas; rekomenduojama tęsti stebėseną'};
+      return {...base,c:'ok',k:p<0?`Sumažėjo ${pct}`:'Stabilu',t:'FM mažėja arba stabilūs. Tęsti ir stebėti eigą. Mažėjimas rodo terapijos efektyvumą.',cls:'FM mažėja arba stabilūs, o tai atitinka terapijos efektyvumą'}; } }
+};
+const val = id => document.getElementById(id)?.value ?? '';
+
+function fill(tpl, r){ return tpl.replace(/\{(\w+)\}/g,(m,k)=> r && r[k]!==undefined ? (typeof r[k]==='number'?fmt(r[k]):r[k]) : '…'); }
+
+function render(id){
+  const s = S.find(x=>x.id===id) || S[0];
+  nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current', b.dataset.id===s.id ? 'true':'false'));
+  let n=0; const step=(h,body)=>`<section class="step"><div class="n">${++n}</div><div><h3>${h}</h3>${body}</div></section>`;
+  panel.innerHTML = `
+    <div class="panel-head"><h2 class="title">${s.title}</h2><span class="ts">video ${s.ts}</span></div>
+    <p class="when">${s.when}</p>
+    ${step('Kokį tyrimą atlikti', s.test)}
+    ${s.ranges ? step('Ribos ir intervalai', s.ranges) : ''}
+    ${s.calc ? step('Įveskite rezultatą', `<div class="calc">${CALC[s.calc].html()}<div class="result idle" id="res"><div class="k">Laukiama rezultato</div><div class="t">Įveskite vertę, ir įvertinimas atsiras čia.</div></div></div>`) : ''}
+    ${step('Komentaras gydytojui', `<div class="comment"><p id="cmt"></p></div><button class="copy" type="button" id="copy">Kopijuoti komentarą</button>`)}`;
+  const update = () => {
+    let r = null;
+    if (s.calc){ r = CALC[s.calc].run(); const el=document.getElementById('res');
+      if(r){ el.className='result '+r.c; el.innerHTML=`<div class="k">${r.k}</div><div class="t">${r.t}</div>`; }
+      else { el.className='result idle'; el.innerHTML='<div class="k">Laukiama rezultato</div><div class="t">Įveskite vertę, ir įvertinimas atsiras čia.</div>'; } }
+    document.getElementById('cmt').textContent = s.calc ? fill(s.comment, r) : s.comment;
+  };
+  panel.querySelectorAll('input,select').forEach(el=>el.addEventListener('input',update));
+  update();
+  document.getElementById('copy').addEventListener('click', async e=>{
+    const t=document.getElementById('cmt').textContent, btn=e.currentTarget;
+    try{ await navigator.clipboard.writeText(t); btn.textContent='Nukopijuota'; }
+    catch{ const r=document.createRange(); r.selectNodeContents(document.getElementById('cmt')); const sel=getSelection(); sel.removeAllRanges(); sel.addRange(r); btn.textContent='Pažymėta, spauskite Ctrl+C'; }
+    setTimeout(()=>btn.textContent='Kopijuoti komentarą',2200);
+  });
+  try{ localStorage.setItem('lab-gidas-sit', s.id); }catch{}
+}
+nav.addEventListener('click', e=>{ const b=e.target.closest('button[data-id]'); if(b){ render(b.dataset.id); if(innerWidth<=860) panel.scrollIntoView({behavior:'smooth',block:'start'}); } });
+let start='nh'; try{ start = localStorage.getItem('lab-gidas-sit') || 'nh'; }catch{}
+render(start);
+</script>
+</body>
+</html>
