@@ -391,4 +391,3 @@ p { margin: 0; }
 .legal th, .legal td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--line); }
 .legal th { background: var(--green-tint); color: var(--ink); font-weight: 600; }
 .legal tr:last-child td { border-bottom: 0; }
-.legal mark.todo { background: #fff1b8; color: #6b4e00; font-size: .8em; font-weight: 700; padding: 1px 6px; border-radius: 4px; }
