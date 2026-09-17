@@ -10,4 +10,14 @@
     <xhtml:link rel="alternate" hreflang="lt" href="https://diagsis.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://diagsis.com/en.html"/>
   </url>
+  <url>
+    <loc>https://diagsis.com/privatumas.html</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://diagsis.com/privatumas.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://diagsis.com/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://diagsis.com/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://diagsis.com/privatumas.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://diagsis.com/privacy.html"/>
+  </url>
 </urlset>
