@@ -6,6 +6,7 @@ Desktop.ini
 # --- Redaktoriai ---
 .vscode/
 .idea/
+.claude/
 
 # --- Slaptažodžiai / konfigūracija ---
 .env
