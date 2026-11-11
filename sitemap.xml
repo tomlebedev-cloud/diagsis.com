@@ -20,4 +20,7 @@
     <xhtml:link rel="alternate" hreflang="lt" href="https://diagsis.com/privatumas.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://diagsis.com/privacy.html"/>
   </url>
+  <url>
+    <loc>https://diagsis.com/gidas.html</loc>
+  </url>
 </urlset>
